@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+  </head>
+
+  <body> 
+    <div class="Home">
+        <p>Home</p>
+
+        <p><a href="blog.html">Blog</a></p>
+    </div>
+
+    <div class="Hoodie">
+        
+        <img src="{{ url_for('static', filename='assets/Hoodie.jpg') }}" alt="Product 1">
+
+        <div class="text-content">
+            <h1><a href="/product/hoodie">Hoodie</a></h1>
+            <p>
+                This versatile hoodie is the ultimate wardrobe staple, 
+                balancing unmatched comfort with a clean, modern silhouette. 
+                Crafted from a heavyweight cotton blend with a brushed fleece interior, 
+                it provides just the right amount of warmth for a morning jog or a coffee run.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="T-Shirt">
+        
+        <img src="{{ url_for('static', filename='assets/T-Shirt.jpeg') }}" alt="Product 2">
+
+        <div class="text-content"> 
+            <h1><a href="/product/t-shirt">T-Shirt</a></h1>
+            <p> 
+                Meet the T-shirt that finally gets it right. 
+                Engineered for a perfect drape and a "lived-in" feel from day one, 
+                this tee combines a minimalist aesthetic with premium durability. 
+                It’s the reliable base layer you’ll reach for every single morning. 
+            </p>
+        </div>
+
+    </div>
+
+    <div class="Pants">
+    
+        <img src="{{ url_for('static', filename='assets/Pants.jpg') }}" alt="Product 3" />
+
+        <div class="text-content"> 
+            <h1><a href="/product/pants">Pants</a></h1>
+            <p> 
+                Built for people on the move, 
+                these pants strike the perfect balance between refined tailoring and athletic performance. 
+                Engineered with a subtle stretch and a clean finish, 
+                they offer a sophisticated look that feels as comfortable as your favorite pair of sweats. 
+            </p>
+        </div>
+    </div>
+
+
+</body> </html>
