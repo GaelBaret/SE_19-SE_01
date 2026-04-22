@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+  </head>
+
+  <body>
+     <div class="Home">
+        <p><a href="/">Home</a></p>
+
+        <p><a href="/blog">Blog</a></p>
+
+        <p><a href="/admin">Admin</a></p>
+    </div>
+
+
+    <div class="login-box">
+        <h1>Admin Login</h1>
+        <form method="POST">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+
+  </body></html>

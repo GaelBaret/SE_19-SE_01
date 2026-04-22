@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Blog</title>
+  </head>
+
+   <body>
+    <div class="Home">
+        <p><a href="/">Home</a></p>
+
+        <p>Blog</p>
+
+        <p><a href="/admin">Admin</a></p>
+    </div>
+
+
+ <body>
+    <h1>Blog</h1>
+    
+    {% for post in posts %}
+        <div class="blog-post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.body }}</p>
+            <hr>
+        </div>
+    {% else %}
+        <p>No posts to show right now.</p>
+    {% endfor %}
+</body>
+
+
+</body></html>

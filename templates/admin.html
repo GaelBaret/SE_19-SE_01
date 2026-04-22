@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+  </head>
+
+  <body>
+    <div class="Home">
+        <p><a href="/">Home</a></p>
+
+        <p><a href="/blog">Blog</a></p>
+
+        <p>Admin</p>
+
+        <a href="/logout">
+            <p type="button">Logout</p>
+        </a>
+
+    </div>
+
+
+<h1>Admin Dashboard</h1>
+
+<form action="/admin/add" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="body" placeholder="Body"></textarea>
+    <button type="submit">Add Post</button>
+</form>
+
+<hr>
+
+{% for post in posts %}
+    <div>
+        <h3>{{ post.title }}</h3>
+        <form action="/admin/edit/{{ post._id }}" method="GET"> 
+            <button type="submit">Edit</button>
+        </form>
+        
+        <form action="/admin/delete/{{ post._id }}" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+{% endfor %}
