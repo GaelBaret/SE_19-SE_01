@@ -1,9 +1,18 @@
 from flask import Flask, render_template, request, redirect, session
 from flask_pymongo import PyMongo
 import requests
+import os
+
 
 app = Flask(__name__)
 app.secret_key = 'SE_19'
+
+API_BASE_URL = os.environ.get('API_URL', 'http://localhost:3000')
+
+@app.route('/')
+def index():
+    posts = requests.get(f"{API_BASE_URL}/api/posts").json()
+    return render_template('index.html', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
