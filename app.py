@@ -35,11 +35,11 @@ def edit_post(post_id):
 
     if request.method == 'POST':
         data = {"title": request.form['title'], "body": request.form['body']}
-        requests.post(f'http://localhost:3000/api/edit/{post_id}', json=data)
+        requests.post(f"{API_BASE_URL}/api/edit/{post_id}", json=data)
         return redirect('/admin')
     
     
-    posts = requests.get('http://localhost:3000/api/posts').json()
+    posts = requests.get(f"{API_BASE_URL}/api/posts").json()
     post = next((p for p in posts if p['_id'] == post_id), None)
     return render_template('edit.html', post=post)
 
@@ -48,18 +48,18 @@ def admin():
     if not session.get('admin_logged_in'):
         return redirect('/login')
     
-    posts = requests.get('http://localhost:3000/api/posts').json()
+    posts = requests.get(f"{API_BASE_URL}/api/posts").json()
     return render_template('admin.html', posts=posts)
 
 @app.route('/admin/add', methods=['POST'])
 def add_post():
     data = {"title": request.form['title'], "body": request.form['body']}
-    requests.post('http://localhost:3000/api/add', json=data)
+    requests.post(f"{API_BASE_URL}/api/add", json=data)
     return redirect('/admin')
 
 @app.route('/admin/delete/<post_id>', methods=['POST'])
 def delete_post(post_id):
-    requests.delete(f'http://localhost:3000/api/delete/{post_id}')
+    requests.delete(f"{API_BASE_URL}/api/delete/{post_id}")
     return redirect('/admin')
 
 @app.route('/')
@@ -70,7 +70,7 @@ def home():
 def show_blog():
     
     try:
-        response = requests.get('http://localhost:3000/api/posts')
+        response = requests.get(f"{API_BASE_URL}/api/posts")
         posts = response.json() 
     except:
         posts = []
