@@ -29,7 +29,7 @@ def edit_post(post_id):
         requests.post(f'http://localhost:3000/api/edit/{post_id}', json=data)
         return redirect('/admin')
     
-    # Fetch current post details
+    
     posts = requests.get('http://localhost:3000/api/posts').json()
     post = next((p for p in posts if p['_id'] == post_id), None)
     return render_template('edit.html', post=post)

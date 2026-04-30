@@ -1,17 +1,17 @@
 import http from 'http';
 import mongoose from 'mongoose';
 
-// 1. Database Connection
+
 ***REMOVED***
 
-// 2. The Blueprint
+
 const Blog = mongoose.model('blogs', new mongoose.Schema({
     title: String,
     body: String,
     date: { type: Date, default: Date.now }
 }));
 
-// 3. The Server
+
 const server = http.createServer((req, res) => {
     // Set CORS headers so Python can talk to this server
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // --- GET: Fetch all posts ---
+
     if (req.url === '/api/posts' && req.method === 'GET') {
         Blog.find().sort({ date: -1 }).then(posts => {
             res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -32,7 +32,7 @@ const server = http.createServer((req, res) => {
         });
     }
 
-    // --- POST: Add new post ---
+   
     else if (req.url === '/api/add' && req.method === 'POST') {
         let body = '';
         req.on('data', chunk => { body += chunk; });
@@ -44,7 +44,7 @@ const server = http.createServer((req, res) => {
         });
     }
 
-    // --- DELETE: Remove a post ---
+   
     else if (req.url.startsWith('/api/delete/') && req.method === 'DELETE') {
         const id = req.url.split('/')[3];
         Blog.findByIdAndDelete(id).then(() => {
@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
         });
     }
 
-    // --- POST: Edit existing post ---
+
     else if (req.url.startsWith('/api/edit/') && req.method === 'POST') {
         const id = req.url.split('/')[3];
         let body = '';
@@ -67,14 +67,14 @@ const server = http.createServer((req, res) => {
     }
 
 
-    // --- 404 handler ---
+  
     else {
         res.writeHead(404);
         res.end("Not Found");
     }
 });
 
-// 4. Start the server
+
 server.listen(3000, () => {
     console.log('📡 JavaScript Database Service running at http://localhost:3000');
 });
