@@ -1,4 +1,9 @@
 {
+  "name": "website-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "mongoose": "^9.4.1"
   }

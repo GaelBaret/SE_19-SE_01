@@ -2,7 +2,7 @@ import http from 'http';
 import mongoose from 'mongoose';
 
 // 1. Database Connection
-mongoose.connect('mongodb://127.0.0.1:27017/GaelBase');
+***REMOVED***
 
 // 2. The Blueprint
 const Blog = mongoose.model('blogs', new mongoose.Schema({
