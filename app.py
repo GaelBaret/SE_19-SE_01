@@ -11,8 +11,19 @@ API_BASE_URL = os.environ.get('API_URL', 'http://localhost:3000')
 
 @app.route('/')
 def index():
-    posts = requests.get(f"{API_BASE_URL}/api/posts").json()
+    try:
+        response = requests.get(f"{API_BASE_URL}/api/posts")
+        if response.status_code == 200:
+            posts = response.json()
+        else:
+            print(f"Backend error: {response.status_code}")
+            posts = []
+    except Exception as e:
+        print(f"Connection failed: {e}")
+        posts = []
+        
     return render_template('index.html', posts=posts)
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
