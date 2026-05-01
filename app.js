@@ -1,6 +1,6 @@
 import http from 'http';
 import mongoose from 'mongoose';
-require('dotenv').config();
+import 'dotenv/config';
 
 
 const dbToken = process.env.MONGO_URI;
@@ -18,7 +18,6 @@ const Blog = mongoose.model('blogs', new mongoose.Schema({
 
 
 const server = http.createServer((req, res) => {
-    // Set CORS headers so Python can talk to this server
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -81,5 +80,5 @@ const server = http.createServer((req, res) => {
 
 
 server.listen(3000, () => {
-    console.log('📡 JavaScript Database Service running at http://localhost:3000');
+    console.log('📡 JavaScript Database Service running');
 });
