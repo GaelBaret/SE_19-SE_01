@@ -2,7 +2,7 @@ import http from 'http';
 import mongoose from 'mongoose';
 
 
-***REMOVED***
+mongoose.connect('mongodb+srv://gaelbaret:BwNBM8mWRK0bk6t4@se19.4zsg5oo.mongodb.net/');
 
 
 const Blog = mongoose.model('blogs', new mongoose.Schema({
