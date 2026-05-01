@@ -2,6 +2,11 @@
 
 A professional, decoupled full-stack application featuring a **Node.js API** and a **Python (Flask) Frontend**, fully deployed on Render with a cloud-hosted MongoDB database.
 
+## 🔗 Live Demo
+**View the live website here:** [https://se-19-se-01-frontend.onrender.com](https://se-19-se-01-frontend.onrender.com)
+
+---
+
 ## 🌟 Project Overview
 This project is built using a modern microservices architecture. Instead of one giant application, it is split into two specialized services:
 1. **The Backend (Node.js):** Handles data and communication with MongoDB Atlas.
