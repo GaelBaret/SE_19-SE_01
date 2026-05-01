@@ -1,8 +1,13 @@
 import http from 'http';
 import mongoose from 'mongoose';
+require('dotenv').config();
 
 
-mongoose.connect('mongodb+srv://gaelbaret:BwNBM8mWRK0bk6t4@se19.4zsg5oo.mongodb.net/');
+const dbToken = process.env.MONGO_URI;
+
+mongoose.connect(dbToken)
+  .then(() => console.log("🚀 Securely connected to MongoDB"))
+  .catch(err => console.error("❌ Connection error:", err));
 
 
 const Blog = mongoose.model('blogs', new mongoose.Schema({
