@@ -4,7 +4,7 @@ A blog made with Python, Flask, HTML, CSS, JavaScript and MongoDB. Visitors can 
 
 ## 🔗 Live Demo
 
-The live website link will be added after the project is deployed on Render.
+The live website link: https://se-19-se-01.onrender.com/
 
 ## 🌟 Project Overview
 
