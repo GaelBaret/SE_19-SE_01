@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+</head>
+<body>
+    <header>
+        <a class="site-name" href="{{ url_for('index') }}">My Blog</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('admin') }}">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About</h1>
+        <div class="about-text">
+            <p>My name is Gael Baret. Welcome to my blog — a place where I share my thoughts, experiences, ideas, and the things I’m learning along the way.</p>
+            <p>I created this blog to document my journey, explore topics that genuinely interest me, and share useful insights that might help or inspire others. You’ll find a mix of personal experiences, practical advice, opinions and discoveries as I continue learning and building new things.</p>
+            <p class="goal-intro">My goal is simple:</p>
+            <ul>
+                <li>Keep things useful</li>
+                <li>Keep things genuine</li>
+                <li>Keep things easy to understand</li>
+            </ul>
+            <p>Thanks for stopping by. I hope you find something here worth reading.</p>
+        </div>
+    </main>
+
+    <footer>Made by Gael Baret</footer>
+</body>
+</html>

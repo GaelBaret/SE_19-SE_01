@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+</head>
+<body>
+    <header>
+        <a class="site-name" href="{{ url_for('index') }}">My Blog</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('admin') }}">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Edit post</h1>
+        <p class="error">{{ error }}</p>
+        <form method="post">
+            <label for="title">Title</label>
+            <input id="title" name="title" value="{{ post.title }}" maxlength="100" required>
+
+            <label for="body">Body</label>
+            <textarea id="body" name="body" rows="10" maxlength="5000" required>{{ post.body }}</textarea>
+
+            <button type="submit">Save</button>
+        </form>
+    </main>
+
+    <footer>Made by Gael Baret</footer>
+</body>
+</html>

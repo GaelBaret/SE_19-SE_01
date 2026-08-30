@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    background: white;
+    color: #222222;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+header,
+main,
+footer {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.site-name {
+    color: #222222;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+a {
+    color: darkgreen;
+}
+
+main {
+    min-height: 500px;
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 42px;
+}
+
+h2 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    max-width: 70ch;
+}
+
+.about-text p {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.about-text .goal-intro {
+    margin-bottom: 4px;
+}
+
+.about-text ul {
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+article,
+#admin-posts section {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #cccccc;
+}
+
+article h3,
+#admin-posts h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.post-body {
+    white-space: pre-line;
+}
+
+form {
+    max-width: 600px;
+    display: grid;
+}
+
+label,
+input,
+textarea,
+button {
+    display: block;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    align-self: stretch;
+    padding: 9px;
+    border: 1px solid #777777;
+    font: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin-top: 15px;
+    padding: 9px 15px;
+    border: 0;
+    background: darkgreen;
+    color: white;
+    cursor: pointer;
+}
+
+#admin-posts form {
+    display: inline-block;
+    margin-left: 12px;
+}
+
+#admin-posts a {
+    display: inline-block;
+}
+
+#admin-posts button {
+    margin-top: 0;
+    background: #a52a2a;
+}
+
+.error,
+.message {
+    padding: 10px;
+    border: 1px solid #999999;
+}
+
+.error {
+    color: #8b0000;
+}
+
+.error:empty,
+.message:empty {
+    display: none;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid darkgreen;
+    outline-offset: 2px;
+}
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-top: 1px solid #cccccc;
+    color: #555555;
+}
+
+@media (max-width: 600px) {
+    header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    main {
+        padding-top: 35px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+}

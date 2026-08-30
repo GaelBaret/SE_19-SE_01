@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+</head>
+<body>
+    <header>
+        <a class="site-name" href="{{ url_for('index') }}">My Blog</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('admin') }}">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <a href="{{ url_for('index') }}">Back to posts</a>
+        <article>
+            <h1>{{ post.title }}</h1>
+            <p class="post-body">{{ post.body }}</p>
+        </article>
+    </main>
+
+    <footer>Made by Gael Baret</footer>
+</body>
+</html>

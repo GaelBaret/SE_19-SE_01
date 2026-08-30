@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+</head>
+<body>
+    <header>
+        <a class="site-name" href="{{ url_for('index') }}">My Blog</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('logout') }}">Log out</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Admin</h1>
+        <p class="message">{{ message }}</p>
+
+        <h2>Add a post</h2>
+        <p class="error">{{ form_error }}</p>
+        <form action="{{ url_for('add_post') }}" method="post">
+            <label for="title">Title</label>
+            <input id="title" name="title" value="{{ form_data.title or '' }}" maxlength="100" required>
+
+            <label for="body">Body</label>
+            <textarea id="body" name="body" rows="8" maxlength="5000" required>{{ form_data.body or '' }}</textarea>
+
+            <button type="submit">Add post</button>
+        </form>
+
+        <h2>Existing posts</h2>
+        {% if api_error %}
+            <p class="error">The posts could not be loaded.</p>
+        {% else %}
+            <div id="admin-posts">
+                {% for post in posts %}
+                    <section>
+                        <h3>{{ post.title }}</h3>
+                        <a href="{{ url_for('edit_post', post_id=post._id) }}">Edit</a>
+                        <form class="delete-form" action="{{ url_for('delete_post', post_id=post._id) }}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </section>
+                {% else %}
+                    <p>There are no posts yet.</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>Made by Gael Baret</footer>
+
+    <script src="{{ url_for('static', filename='Main.js') }}"></script>
+</body>
+</html>

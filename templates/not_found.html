@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Post not found</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Main.css') }}">
+</head>
+<body>
+    <header>
+        <a class="site-name" href="{{ url_for('index') }}">My Blog</a>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Post not found</h1>
+        <p>This post does not exist.</p>
+        <a href="{{ url_for('index') }}">Back to posts</a>
+    </main>
+
+    <footer>Made by Gael Baret</footer>
+</body>
+</html>
